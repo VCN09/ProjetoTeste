@@ -16,9 +16,9 @@ public class Cadastro {
 
         Usuario novoUsuario;
 
-        Endereco novoEndereco = new Endereco();  // New é uma alocação de memória!
+        Endereco novoEndereco = new Endereco();  // "New" é uma alocação de memória!
 
-        Usuario adminUsuario = new Usuario();
+        Usuario adminUsuario = new Usuario();  // Usuário ADMIN pertence a Usurio!
         adminUsuario.setNome("admin");
         adminUsuario.setSenha(1234);
         adminUsuario.enderecos = new ArrayList<>();
