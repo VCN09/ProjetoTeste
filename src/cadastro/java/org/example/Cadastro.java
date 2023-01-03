@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;                   // importação da classe scanner para ler a entrada do usuário no teclado!
 
 
@@ -13,9 +14,15 @@ public class Cadastro {
 
         Lista novaLista = new Lista();
 
-        Usuario novoUsuario = new Usuario();
+        Usuario novoUsuario;
 
-        Endereco novoEndereco = new Endereco();
+        Endereco novoEndereco = new Endereco();  // New é uma alocação de memória!
+
+        Usuario adminUsuario = new Usuario();
+        adminUsuario.setNome("admin");
+        adminUsuario.setSenha(1234);
+        adminUsuario.enderecos = new ArrayList<>();
+        novaLista.listaDeUsuarios.add(adminUsuario);
 
         Scanner teclado;
 
@@ -52,6 +59,7 @@ public class Cadastro {
                     novoUsuario = new Usuario (nome, idade, sexo, matricula, telefone, email);
                     novaLista.inserirUsuario(novoUsuario);
 
+
                     System.out.println("\n CADASTRANDO ENDEREÇO ");
                     System.out.println("\n LOGRADOURO: ");
                     logradouro = teclado.nextLine();
@@ -74,7 +82,7 @@ public class Cadastro {
 
                 case 2:
                     novaLista.listarUsuario();
-                    novaLista.listarEndereco();
+
 
                     break;
 

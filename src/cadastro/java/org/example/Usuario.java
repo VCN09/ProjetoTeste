@@ -6,6 +6,7 @@ import java.util.List;
 public class Usuario {
     String nome, idade, sexo, matricula, telefone, email;
     List<Endereco> enderecos;
+    private int senha;
 
     public Usuario(){
 
@@ -86,5 +87,9 @@ public class Usuario {
         System.out.println("\n Cidade: " + this.enderecos.get(0).cidade);
         System.out.println("\n Estado: " + this.enderecos.get(0).estado);
 
+    }
+
+    public void setSenha(int senha) {
+        this.senha = senha;
     }
 }
