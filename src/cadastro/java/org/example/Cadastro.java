@@ -52,15 +52,7 @@ public class Cadastro {
                     novoUsuario = new Usuario (nome, idade, sexo, matricula, telefone, email);
                     novaLista.inserirUsuario(novoUsuario);
 
-                    break;
-
-                case 2:
-                    novaLista.listarUsuario();
-                    novaLista.listarEndereco();
-
-                    break;
-
-                case 3:
+                    System.out.println("\n CADASTRANDO ENDEREÇO ");
                     System.out.println("\n LOGRADOURO: ");
                     logradouro = teclado.nextLine();
                     System.out.println("\n Nº: ");
@@ -75,7 +67,48 @@ public class Cadastro {
                     estado = teclado.nextLine();
 
                     novoEndereco = new Endereco (logradouro, numero, bairro, cep, cidade, estado);
-                    novaLista.inserirEndereco(novoEndereco);
+                    novoUsuario.enderecos.add(novoEndereco);
+
+
+                    break;
+
+                case 2:
+                    novaLista.listarUsuario();
+                    novaLista.listarEndereco();
+
+                    break;
+
+                case 3:
+
+                    System.out.println("\n Digite a /Matrícula ");
+                    matricula = teclado.nextLine();
+                    Usuario usuarioEncontrado = new Usuario();
+
+                    for (Usuario usr: novaLista.listaDeUsuarios) {
+                       // String matriculaFormatada = String.format("%02d", matricula);
+                        if (usr.matricula.equals(matricula)) {
+                            usuarioEncontrado = usr;
+                        }
+                        else {
+                            System.out.println("   VOCÊ SE FERROU! VOLTE E DIGITE EM 3 CASA DECIMAIS!!!     ");
+                        }
+                    }
+
+                    System.out.println("\n LOGRADOURO: ");
+                    logradouro = teclado.nextLine();
+                    System.out.println("\n Nº: ");
+                    numero = teclado.nextLine();
+                    System.out.println("\n BAIRRO: ");
+                    bairro = teclado.nextLine();
+                    System.out.println("\n CEP: ");
+                    cep = teclado.nextLine();
+                    System.out.println("\n CIDADE: ");
+                    cidade = teclado.nextLine();
+                    System.out.println("\n ESTADO: ");
+                    estado = teclado.nextLine();
+
+                    novoEndereco = new Endereco (logradouro, numero, bairro, cep, cidade, estado);
+                    usuarioEncontrado.enderecos.add(novoEndereco);
 
                     break;
 

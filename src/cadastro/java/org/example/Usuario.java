@@ -1,7 +1,11 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario {
     String nome, idade, sexo, matricula, telefone, email;
+    List<Endereco> enderecos;
 
     public Usuario(){
 
@@ -14,6 +18,8 @@ public class Usuario {
         setMatricula(matricula);
         setTelefone(telefone);
         setEmail(email);
+        this.enderecos = new ArrayList<>();
+
 
     }
 
@@ -73,6 +79,12 @@ public class Usuario {
         System.out.println("\n Telefone: " + this.telefone);
         System.out.println("\n E-Mail: " + this.email);
 
+        System.out.println("\n Logradouro: " + this.enderecos.get(0).logradouro);
+        System.out.println("\n Nº: " + this.enderecos.get(0).numero);
+        System.out.println("\n Bairro: " + this.enderecos.get(0).bairro);
+        System.out.println("\n CEP: " + this.enderecos.get(0).cep);
+        System.out.println("\n Cidade: " + this.enderecos.get(0).cidade);
+        System.out.println("\n Estado: " + this.enderecos.get(0).estado);
 
     }
 }
