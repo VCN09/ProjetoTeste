@@ -1,11 +1,11 @@
-package org.example;
+package cadastro.java.org.example.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
-    String nome, idade, sexo, matricula, telefone, email;
-    List<Endereco> enderecos;
+    private String nome, idade, sexo, matricula, telefone, email;
+     private List<Endereco> enderecos;
     private int senha;
 
     public Usuario(){
@@ -72,7 +72,7 @@ public class Usuario {
         this.email = email;
     }
 
-    void listar() {
+    public void listar() {
         System.out.println("\n Nome: " + this.nome);
         System.out.println("\n Idade: " + this.idade);
         System.out.println("\n Sexo: " + this.sexo);
@@ -91,5 +91,9 @@ public class Usuario {
 
     public void setSenha(int senha) {
         this.senha = senha;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return this.enderecos;
     }
 }

@@ -1,4 +1,8 @@
-package org.example;
+package cadastro.java.org.example.controller;
+
+import cadastro.java.org.example.model.Endereco;
+import cadastro.java.org.example.repository.Lista;
+import cadastro.java.org.example.model.Usuario;
 
 import java.util.ArrayList;
 import java.util.Scanner;                   // importação da classe scanner para ler a entrada do usuário no teclado!
@@ -21,7 +25,6 @@ public class Cadastro {
         Usuario adminUsuario = new Usuario();  // Usuário ADMIN pertence a Usurio!
         adminUsuario.setNome("admin");
         adminUsuario.setSenha(1234);
-        adminUsuario.enderecos = new ArrayList<>();
         novaLista.listaDeUsuarios.add(adminUsuario);
 
         Scanner teclado;
@@ -75,7 +78,7 @@ public class Cadastro {
                     estado = teclado.nextLine();
 
                     novoEndereco = new Endereco (logradouro, numero, bairro, cep, cidade, estado);
-                    novoUsuario.enderecos.add(novoEndereco);
+                    novoUsuario.getEnderecos().add(novoEndereco);
 
 
                     break;
@@ -94,7 +97,7 @@ public class Cadastro {
 
                     for (Usuario usr: novaLista.listaDeUsuarios) {
                        // String matriculaFormatada = String.format("%02d", matricula);
-                        if (usr.matricula.equals(matricula)) {
+                        if (usr.getMatricula().equals(matricula)) {
                             usuarioEncontrado = usr;
                         }
                         else {
@@ -116,7 +119,7 @@ public class Cadastro {
                     estado = teclado.nextLine();
 
                     novoEndereco = new Endereco (logradouro, numero, bairro, cep, cidade, estado);
-                    usuarioEncontrado.enderecos.add(novoEndereco);
+                    usuarioEncontrado.getEnderecos().add(novoEndereco);
 
                     break;
 

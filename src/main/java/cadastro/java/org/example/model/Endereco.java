@@ -1,4 +1,4 @@
-package org.example;
+package cadastro.java.org.example.model;
 
 public class Endereco {
     String logradouro, numero, bairro, cep, cidade, estado;
